@@ -1,6 +1,7 @@
 
     function countview(){
-
+ //Earlier we stored ip address  in our variable with the help of an api, but if user's internet is slow it can take sometime 
+ //So to overcome this problem we are using if conditions to check if we already got ip address data or not? if not then we will run this function again after 500ms
     if(userip !== undefined && userip !== null ){
 firebase.database().ref(`views`).on('value',(data)=>{
     useripstring = userip.replace(/\./g,'x')
@@ -25,9 +26,12 @@ document.getElementById("views").innerHTML = data.numChildren();
 
      }
     else{
-
+//So we couldnt find ip address and our variable was nulll or undefined so now we will run countview() function after 500ms,
+///It will keep repeating this process untill we get ip address details from our api. 
+// this function will keep checking every 500 milli seconds that user's ip address is available or not!.
         console.log("countview will run after 500ms")
         setTimeout(function(){countview()},500)
+        
     }   
         
 
