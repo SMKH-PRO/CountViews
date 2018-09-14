@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ 
+ 
+ <script src="setIPDetails.js"></script>
+ 
+ 
+ 
+ 
+ <!--Page intro for Search Engine and social media-->
+ 
+ <link rel="icon" type="image/png" href="viewicon.png">
+ <meta property="og:type" content="website" />
+<meta property="og:title" content="View Counter Made With Firebase Database." />
+<meta property="og:description" content="Extremely fast and easily codded views counter made with pure javascript and firebase by Kashan Haider." />
+<meta property="og:image" content="https://www.mutualfilesharing.com/viewiconfbb7.png" />
+
+<meta name="description" content="The most easy to code views counter, Pure javascript that counts real views using firebase database.">
+
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Views Counter</title>
+    
+    
+    
+    
+    
+    <!--Page intro ends above -->
+    
+    
+    
+    
+
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+<script> 
+// Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDap2PlQsFky5YnQRhyMqsWENasn_hJUiU",
+    authDomain: "saylani-7b489.firebaseapp.com",
+    databaseURL: "https://saylani-7b489.firebaseio.com",
+    projectId: "saylani-7b489",
+    storageBucket: "saylani-7b489.appspot.com",
+    messagingSenderId: "349400059211"
+  };
+  firebase.initializeApp(config);
+  
+  
+ 
+</script>
+
+
+
+    <script src="GetIPDetails.js"></script>
+
+ <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+
+
+
+
+<div id="parentdiv"><div id="loading">Loading Please Wait......!</div><div id="viewdiv" style="visibility:hidden;" class="Div">This Page  Has Been Viewed <h1 id="views"></h1> Times</div>
+</div>
+
+
+
+
+
+
+<script src="checkconnection.js"></script>    <!--this will check if user is connected with firebase database or not! and if he is connected it will start counting views if user is eligible!-->
+
+
+
+
+
+
+
+
+
+<script src="CountView.js"></script>
+
+
+
+</body>
+</html>
