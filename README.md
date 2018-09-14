@@ -2,7 +2,12 @@
 Simple Example/Demo Of  Views Counter!.
 
 
-
+ Live Demo :- https://smkh-pro.github.io/CountViews/
+ 
+ 
+~~~~~~~~~~~~~~~~~~
+Pure JavaScript (No Server Side Language like php, just using some strong javascript apis) 
+ 
 With this views counting system, you can count each and every real views on your website/video or pictures!
 
 
