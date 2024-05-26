@@ -24,7 +24,7 @@ jobs:
       - name: Install Dependencies
         run: npm install puppeteer
 
- - name: Capture Screenshot
+      - name: Capture Screenshot
         run: |
           node -e "
           const puppeteer = require('puppeteer');
