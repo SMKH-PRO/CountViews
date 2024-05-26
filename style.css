@@ -1,38 +1,52 @@
+@font-face {
+  font-family: Amaranthb;
 
-        @font-face {
-
-font-family: Amaranthb;
-
-src: url('AmaranthBold.ttf');
-
+  src: url("AmaranthBold.ttf");
 }
-*{font-family: Amaranthb;}
-
-    #loading, .Div{
-        position: fixed;
- margin-top: 15%;
- text-align:  -webkit-center;
- font-size:30px;
-text-align: center;
-width:100%;
-line-height: 0;
-
-    }
-    #views{font-size:130px; color:red; font-weight: 800;line-height:0;
-    text-shadow:0px 0px 20px black;-webkit-text-stroke: 4px white;}
-   
-
-  @media only screen and (max-width: 800px) {
-
-#loading, .Div{margin-top: 30%;}
+* {
+  font-family: Amaranthb;
 }
-   @media only screen and (max-width: 500px) {
 
-       #loading, .Div{margin-top: 50%;}
-   }
-   @media only screen and (max-width: 358px) {
-    #loading, .Div{font-size:20px !important}
-   }
-   @media only screen and (max-width: 250px) {
-    #loading, .Div{font-size:14px !important}
-   }amarna
+#loading,
+.Div {
+  position: fixed;
+  margin-top: 15%;
+  text-align: -webkit-center;
+  font-size: 30px;
+  text-align: center;
+  width: 100%;
+  line-height: 0;
+}
+#views {
+  font-size: 130px;
+  color: red;
+  font-weight: 800;
+  line-height: 0;
+  text-shadow: 0px 0px 20px black;
+  -webkit-text-stroke: 4px white;
+}
+
+@media only screen and (max-width: 800px) {
+  #loading,
+  .Div {
+    margin-top: 30%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #loading,
+  .Div {
+    margin-top: 50%;
+  }
+}
+@media only screen and (max-width: 358px) {
+  #loading,
+  .Div {
+    font-size: 20px !important;
+  }
+}
+@media only screen and (max-width: 250px) {
+  #loading,
+  .Div {
+    font-size: 14px !important;
+  }
+}
