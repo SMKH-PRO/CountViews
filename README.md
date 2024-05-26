@@ -1,20 +1,45 @@
 # CountViews
 
-Simple Example/Demo Of Views Counter!.
+## Simple JavaScript View Counter
 
-<a href="https://smkh-pro.github.io/CountViews/"> Click here for live demo </a>
+CountViews is a lightweight view counting system that tracks each unique visitor to your website, video, or picture gallery without requiring any server-side languages like PHP. It leverages the power of Firebase and pure JavaScript to deliver accurate view counts.
 
-Pure JavaScript (No Server Side Language like php, just using some strong javascript apis)
+<a href="https://smkh-pro.github.io/CountViews/">
+  <img src="images/screenshot.png" alt="CountViews Demo Screenshot">
+</a>
 
-With this views counting system, you can count each and every real views on your website/video or pictures!
+[Click here for live demo](https://smkh-pro.github.io/CountViews/)
 
-How It Works?
-We are using firebase database that allow us to store data into database using JavaScript so everytime a user visit our website, we are getting his ip address using an API and then we are storing it in our firebase database so on every visit we will be checking in our database if the ip address exist or not if not then we will not count it as a view!
+## How It Works
 
-```
-Special Features:-
+CountViews uses Firebase as a backend to store visitor data. Every time a user visits your site, their IP address is fetched using an API and stored in the Firebase database. The system then checks if the IP address already exists in the database to determine whether the visitor is new or returning. Only new visitors' views are counted, ensuring accurate view statistics.
 
-It will check if user is a returning user or a new user,
-and if a user is a new user then we will count his view
-and store his ip address in our database!
-```
+### Features
+
+- **Unique View Counting**: Only counts views from new visitors, avoiding duplicate counts from the same user.
+- **Firebase Integration**: Uses Firebase for data storage and retrieval.
+- **JavaScript Powered**: Entirely implemented with JavaScript, no need for server-side code.
+- **Real-time Updates**: View counts are updated in real-time as new users visit your site.
+
+## Special Features
+
+- **Returning User Detection**: Identifies if a user is a returning visitor and prevents double-counting.
+- **Simple Setup**: Easy to integrate into any web project with minimal setup required.
+
+## Screenshot
+
+![CountViews Screenshot](https://github.com/smkh-pro/CountViews/raw/main/images/screenshot.png)
+
+## Getting Started
+
+To implement CountViews on your website, follow these steps:
+
+1. Clone the repository.
+2. Set up a Firebase project and get the configuration details.
+3. Modify the JavaScript code to include your Firebase configuration.
+4. Deploy the code to your preferred hosting service.
+
+For a detailed guide, refer to the documentation in the repository.
+
+
+
