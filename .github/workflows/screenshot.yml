@@ -1,0 +1,45 @@
+name: Update Screenshot
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs at midnight UTC every day
+  push:
+    branches:
+      - master
+
+jobs:
+  capture-screenshot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Puppeteer
+        run: npm install puppeteer
+
+      - name: Capture Screenshot
+        run: |
+          node -e "
+          const puppeteer = require('puppeteer');
+          (async () => {
+            const browser = await puppeteer.launch();
+            const page = await browser.newPage();
+            await page.goto('https://smkh-pro.github.io/CountViews/');
+            await page.screenshot({ path: 'images/screenshot.png' });
+            await browser.close();
+          })();
+          "
+
+      - name: Commit and push screenshot
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add images/screenshot.png
+          git commit -m 'Update screenshot'
+          git push
