@@ -26,9 +26,6 @@ CountViews uses Firebase as a backend to store visitor data. Every time a user v
 - **Returning User Detection**: Identifies if a user is a returning visitor and prevents double-counting.
 - **Simple Setup**: Easy to integrate into any web project with minimal setup required.
 
-## Screenshot
-
-![CountViews Screenshot](https://github.com/smkh-pro/CountViews/raw/main/images/screenshot.png)
 
 ## Getting Started
 
