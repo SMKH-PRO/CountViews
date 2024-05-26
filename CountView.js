@@ -15,7 +15,7 @@ const countview = async () => {
 
         // Update DOM elements
         document.getElementById("loading").style.display = "none";
-        document.getElementById("viewdiv").style.visibility = "visible";
+        document.getElementById("viewdiv").style.display = "block";
         document.getElementById("views").innerHTML = snapshot.numChildren();
 
         // Check if user IP is already recorded

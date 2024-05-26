@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install Puppeteer
+      - name: Install Dependencies
         run: npm install puppeteer
 
       - name: Capture Screenshot
@@ -32,7 +32,7 @@ jobs:
             const browser = await puppeteer.launch();
             const page = await browser.newPage();
             await page.goto('https://smkh-pro.github.io/CountViews/');
-            await page.waitForTimeout(2000); // Wait for 1 second
+            await page.waitForSelector('#views', { visible: true }); // Wait for element with id "views"
             await page.screenshot({ path: 'images/screenshot.png' });
             await browser.close();
           })();
