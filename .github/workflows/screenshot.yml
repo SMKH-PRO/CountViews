@@ -35,6 +35,7 @@ jobs:
 
             // Wait for text to become both present and visible
             await waitForTextVisibility(page, 'This Page Has Been Viewed');
+            await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for 1 second before taking screenshot.
 
             // Take screenshot
             await page.screenshot({ path: 'images/screenshot.png' });
