@@ -24,7 +24,7 @@ jobs:
       - name: Install Dependencies
         run: npm install puppeteer
 
-      - name: Capture Screenshot
+ - name: Capture Screenshot
         run: |
           node -e "
           const puppeteer = require('puppeteer');
@@ -32,12 +32,38 @@ jobs:
             const browser = await puppeteer.launch();
             const page = await browser.newPage();
             await page.goto('https://smkh-pro.github.io/CountViews/');
-            await page.waitForSelector('#views', { visible: true }); // Wait for element with id "views"
+
+            // Wait for text to become both present and visible
+            await waitForTextVisibility(page, 'This Page Has Been Viewed');
+
+            // Take screenshot
             await page.screenshot({ path: 'images/screenshot.png' });
+
             await browser.close();
           })();
-          "
 
+          async function waitForTextVisibility(page, text) {
+            let retries = 0;
+            const maxRetries = 10; // Maximum number of retries
+            while (retries < maxRetries) {
+              const isVisible = await page.evaluate((text) => {
+                const elements = document.querySelectorAll('*');
+                for (let element of elements) {
+                  if (element.innerText.includes(text) && element.offsetWidth > 0 && element.offsetHeight > 0) {
+                    return true;
+                  }
+                }
+                return false;
+              }, text);
+              if (isVisible) {
+                return; // Text is visible, exit function
+              }
+              await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for 1 second before retrying
+              retries++;
+            }
+            throw new Error('Timeout: Text not found or not visible after 5 retries.');
+          }
+          "
       - name: Commit and push screenshot
         run: |
           git config --global user.name 'github-actions[bot]'
